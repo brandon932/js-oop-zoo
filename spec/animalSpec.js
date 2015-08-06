@@ -20,19 +20,21 @@ describe('Animal', function(){
 
   describe('#growUp', function(){
     it('should increment the age by one', function(){
-      // add spec
+      animal.growUp();
+      expect(animal.age).toEqual(28);
     });
   });
 
   describe('#awake', function(){
     it('should initially be off', function(){
-      // add spec
+      expect(animal.awake).toBe(false);
     });
   });
 
    describe('#wakeUp', function(){
     it('should change state to awake', function(){
-      // add spec
+      animal.wakeUp();
+      expect(animal.awake).toBe(true);
     });
   });
 
