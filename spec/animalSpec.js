@@ -40,16 +40,23 @@ describe('Animal', function(){
 
   describe('#sleep', function(){
     it('should initially be sleeping', function(){
-      // add spec
+      expect(animal.awake).toBe(false);
     });
+    it("should put the animal to sleep", function(){
+      animal.wakeUp();
+      animal.sleep();
+      expect(animal.awake).toBe(false);
+    });
+
   });
 
   describe('#feed', function(){
     it('should get fed if awake', function(){
-      // add spec
+      animal.wakeUp();
+      expect(animal.feed()).toEqual("You feed the animal.");
     });
     it('not should get fed if sleeping', function(){
-      // add spec
+      expect(animal.feed()).toEqual("The animal is asleep.");
     });
   });
 

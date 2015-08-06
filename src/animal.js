@@ -19,4 +19,14 @@ Animal.prototype.wakeUp = function(){
   this.awake = true;
 };
 
+Animal.prototype.sleep = function(){
+  this.awake = false;
+};
+Animal.prototype.feed = function(){
+  if (this.awake === true){
+    return "You feed the animal.";
+  }else{
+    return "The animal is asleep.";
+  }
+};
 module.exports = Animal;
