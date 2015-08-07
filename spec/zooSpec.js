@@ -75,7 +75,12 @@ describe('Zoo', function(){
 
   describe('#removeAnimal', function(){
     it('should remove an animal from the animals array if the zoo is open', function(){
-      // add spec
+      zoo.open();
+      zoo.addAnimal(pig);
+      zoo.addAnimal(lion);
+      var originalPlace = zoo.animals.length;
+      zoo.removeAnimal(lion);
+      expect(zoo.animals.length).toEqual(originalPlace -1);
     });
   });
 });

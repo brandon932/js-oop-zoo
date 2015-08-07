@@ -36,10 +36,14 @@ Zoo.prototype.addAnimal = function(newAnimal){
         this.animals.push(newAnimal);
     }
   }
-
   else{
-    console.log("the zoo is closed");
+    return ("the zoo is closed");
   }
+};
+Zoo.prototype.removeAnimal = function(oldAnimal){
+  i = this.animals.indexOf(oldAnimal);
+  this.animals.splice(this.animals[i], 1);
+
 };
 
 module.exports = Zoo;
