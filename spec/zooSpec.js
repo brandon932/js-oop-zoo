@@ -61,10 +61,15 @@ describe('Zoo', function(){
     });
 
     it('should not add duplicates', function(){
+
       zoo.open();
       zoo.addAnimal(pig);
+      zoo.addAnimal(lion);
       zoo.addAnimal(pig);
-      expect(zoo.animals).toEqual([pig]);
+      zoo.addAnimal(lion);
+      expect(zoo.animals[0].name).toEqual(pig.name);
+      expect(zoo.animals[1].name).toEqual(lion.name);
+
 });
   });
 
